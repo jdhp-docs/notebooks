@@ -1,3 +1,3 @@
-# Numpy and Scipy notebook
+# Numpy notebook
 
-A Jupyter notebook about Numpy and Scipy.
+A Jupyter notebook about Numpy.

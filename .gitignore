@@ -1,2 +1,8 @@
 *.html
+*.pdf
+*.py
+*.md
+*.tex
+*.rst
 .ipynb_checkpoints/
+__pycache__/

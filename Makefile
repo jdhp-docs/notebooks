@@ -8,9 +8,31 @@ PY_FILES = $(patsubst %.ipynb,%.py,$(wildcard *.ipynb))
 RST_FILES = $(patsubst %.ipynb,%.rst,$(wildcard *.ipynb))
 SLIDES_FILES = $(patsubst %.ipynb,%_slides.html,$(wildcard *.ipynb))
 
-.PHONY : all clean init publish
+.PHONY : all clean init publish html pdf latex tex markdown md python py rst slides
 	
-all: $(HTML_FILES)
+all: html
+
+
+html: $(HTML_FILES)
+
+pdf: $(PDF_FILES)
+
+latex: $(TEX_FILES)
+
+tex: $(TEX_FILES)
+
+markdown: $(MD_FILES)
+
+md: $(MD_FILES)
+
+python: $(PY_FILES)
+
+py: $(PY_FILES)
+
+rst: $(RST_FILES)
+
+slides: $(SLIDES_FILES)
+
 
 %.html: %.ipynb
 	$(JUPYTER) nbconvert --execute $<
@@ -32,6 +54,7 @@ all: $(HTML_FILES)
 
 %_slides.html: %.ipynb
 	$(JUPYTER) nbconvert --to slides --execute $<
+
 
 clean:
 	@echo "Remove output files"

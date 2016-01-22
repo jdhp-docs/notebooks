@@ -15,6 +15,9 @@ scripts, ...).
 Related links
 -------------
 
+- https://github.com/rossant/ipymd
+- https://pypi.python.org/pypi/notedown/1.0.3
+- https://github.com/aaren/notedown
 - https://github.com/toobaz/ipynb_output_filter
 - http://stackoverflow.com/questions/25178118/opening-ipython-notebook-without-output
 - http://python.6.x6.nabble.com/IPython-User-Strip-output-from-IPython-notebook-td5031818.html

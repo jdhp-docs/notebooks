@@ -2,6 +2,12 @@
 
 ## Step 1: commit and publish notebooks
 
+* [ ] Expliquer dans le README le pourquoi de la double indirection pour
+      .gitignore, Makefile, etc. : ça évite d'avoir dans le référentiel des
+      liens qui pointent vers l'extérieur. L'uilitsateur a alors deux choix
+      possibles : soit ipynb est un répertoire qui contient le sous-module Git
+      "jdhp-docs/notebook_skeleton" ; soit il est un lien symbolique vers le
+      dossier qui contient "jdhp-docs/notebook_skeleton".
 * [ ] Add a script to remove all results from .ipynb files, use it in the
       Makefile (in the "clean" target) and add instruction to explain how use
       it automatically with Git.

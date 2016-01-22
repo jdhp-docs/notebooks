@@ -11,4 +11,4 @@ __pycache__/
 !README.md
 !README.rst
 !TODO.md
-!clean_ipynb.py
+!strip_ipynb_output.py

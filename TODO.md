@@ -12,6 +12,8 @@
 ## Step 2: write notebooks
 
 * [ ] Use notedown or write something similar (convert .md files to .ipynb).
+      https://pypi.python.org/pypi/notedown/1.0.3
+      https://github.com/aaren/notedown
       Adapt Makefile targets.
 * [ ] Add documentation in the README file.
 

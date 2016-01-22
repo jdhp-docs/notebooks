@@ -1,1 +1,1 @@
-../notebook_skeleton/Makefile
+ipynb/Makefile

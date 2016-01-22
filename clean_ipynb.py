@@ -40,17 +40,29 @@ def main():
 
     # CLEAN FILES #############################################################
 
+    output_files = {}
+
     for file_path in file_paths:
         with open(file_path, 'r') as fd:
             notebook = json.load(fd)
 
-            print(notebook)
+            for cell in notebook['cells']:
 
-            # TODO: Remove useless data: cf. https://github.com/jdhp-docs/python_notebooks/commit/9776c27f6d6a464ccd6bfc80cab98967d05ec690
-            # TODO: "execution_count": N, -> "execution_count": null,
-            # TODO: "outputs": [...], -> "outputs": [],
+                # Init execution_count items
+                if "execution_count" in cell:
+                    cell["execution_count"] = None
 
-            # TODO: save result
+                # Remove outputs
+                if "outputs" in cell:
+                    cell["outputs"] = []
+
+            output_files[file_path] = notebook
+
+    # SAVE THE RESULT #########################################################
+
+    for file_path, data in output_files.items():
+        with open(file_path, 'w') as fd:
+            json.dump(data, fd, sort_keys=True, indent=4)  # pretty print format
 
 if __name__ == '__main__':
     main()

@@ -21,6 +21,15 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+"""
+This script strips the output of an Jupyter notebook.
+
+It can be used as a preprocessing before commiting notebooks on Version Systems
+like Git.
+
+Here is a different way to do this: http://stackoverflow.com/questions/25178118/opening-ipython-notebook-without-output.
+"""
+
 import argparse
 import json
 
@@ -30,7 +39,7 @@ def main():
     # PARSE OPTIONS ###########################################################
 
     # TODO: improve the description
-    parser = argparse.ArgumentParser(description='Clean Jupyter Notebook files (.ipynb files) for Version Systems like Git.')
+    parser = argparse.ArgumentParser(description='Strip the output of Jupyter Notebooks (.ipynb files).')
 
     parser.add_argument("fileargs", nargs="+", metavar="FILE", help="Jupyter Notebook files to clean")
 

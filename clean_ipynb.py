@@ -30,7 +30,7 @@ def main():
     # PARSE OPTIONS ###########################################################
 
     # TODO: improve the description
-    parser = argparse.ArgumentParser(description='Clean Jupyter Notebook files (.ipynb files).')
+    parser = argparse.ArgumentParser(description='Clean Jupyter Notebook files (.ipynb files) for Version Systems like Git.')
 
     parser.add_argument("fileargs", nargs="+", metavar="FILE", help="Jupyter Notebook files to clean")
 
@@ -62,7 +62,7 @@ def main():
 
     for file_path, data in output_files.items():
         with open(file_path, 'w') as fd:
-            json.dump(data, fd, sort_keys=True, indent=4)  # pretty print format
+            json.dump(data, fd, sort_keys=True, indent=1)  # pretty print format
 
 if __name__ == '__main__':
     main()

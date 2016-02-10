@@ -14,6 +14,8 @@
       it automatically with Git.
 * [ ] Makefile: add a "publish" target = publish .ipynb (with outputs) and
       .html on JDHP.
+* [ ] Improve the style in the HTML output: make the output more "natural" for
+      readers who have never heard about Jupyter and IPython.
 * [ ] Add documentation in the README file.
 
 ## Step 2: write notebooks

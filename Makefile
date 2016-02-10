@@ -1,5 +1,7 @@
 JUPYTER = jupyter
 
+PUBLISH_DST = "tf:~/jdhp/jdhp.org-web/htdocs/docs/notebook"
+
 HTML_FILES = $(patsubst %.ipynb,%.html,$(wildcard *.ipynb))
 PDF_FILES = $(patsubst %.ipynb,%.pdf,$(wildcard *.ipynb))
 TEX_FILES = $(patsubst %.ipynb,%.tex,$(wildcard *.ipynb))
@@ -54,6 +56,11 @@ slides: $(SLIDES_FILES)
 
 %_slides.html: %.ipynb
 	$(JUPYTER) nbconvert --to slides --execute $<
+
+
+publish: html
+	rsync -a -v -e ssh *.ipynb ${PUBLISH_DST}/
+	rsync -a -v -e ssh $(HTML_FILES) ${PUBLISH_DST}/
 
 
 clean:

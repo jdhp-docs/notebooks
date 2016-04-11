@@ -11,6 +11,17 @@ Description
 
 This repository contains a Jupyter notebook about Python, Numpy, Matplotlib, Scipy, ...
 
+Installation and usage
+======================
+
+After you have cloned this repository in your computer, it is recommended to
+add the https://github.com/jdhp-docs/notebook-skeleton submodule in a directory
+named "ipynb"::
+
+ git clone https://github.com/jdhp-docs/python-notebooks.git
+ cd python-notebooks
+ git submodule add https://github.com/jdhp-docs/notebook-skeleton.git ipynb
+
 License
 =======
 

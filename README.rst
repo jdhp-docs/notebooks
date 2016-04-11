@@ -4,7 +4,7 @@
 
 Copyright (c) 2016 Jeremie DECOCK (http://www.jdhp.org)
 
-* Source code: https://github.com/jdhp-docs/python_notebooks
+* Source code: https://github.com/jdhp-docs/python-notebooks
 
 Description
 ===========
@@ -19,5 +19,5 @@ License
 
 
 .. _MIT License: http://opensource.org/licenses/MIT
-.. _Python notebooks: https://github.com/jdhp-docs/python_notebooks
+.. _Python notebooks: https://github.com/jdhp-docs/python-notebooks
 

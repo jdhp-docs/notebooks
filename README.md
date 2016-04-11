@@ -4,7 +4,7 @@ Notebook Skeleton
 Copyright (c) 2016 Jeremie DECOCK (http://www.jdhp.org)
 
 - Web site: <http://www.jdhp.org/>
-- Source code: <https://github.com/jdhp-docs/notebook_skeleton>
+- Source code: <https://github.com/jdhp-docs/notebook-skeleton>
 
 Description
 -----------

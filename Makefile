@@ -1,6 +1,8 @@
-JUPYTER = jupyter
+include meta.make
 
-PUBLISH_DST = "tf:~/jdhp/jdhp.org-web/htdocs/docs/notebook"
+###############################################################################
+
+JUPYTER = jupyter
 
 HTML_FILES = $(patsubst %.ipynb,%.html,$(wildcard *.ipynb))
 PDF_FILES = $(patsubst %.ipynb,%.pdf,$(wildcard *.ipynb))
@@ -10,10 +12,11 @@ PY_FILES = $(patsubst %.ipynb,%.py,$(wildcard *.ipynb))
 RST_FILES = $(patsubst %.ipynb,%.rst,$(wildcard *.ipynb))
 SLIDES_FILES = $(patsubst %.ipynb,%_slides.html,$(wildcard *.ipynb))
 
-.PHONY : all clean init publish html pdf latex tex markdown md python py rst slides
+.PHONY : all clean init jdhp publish html pdf latex tex markdown md python py rst slides
 	
 all: html
 
+###############################################################################
 
 html: $(HTML_FILES)
 
@@ -35,6 +38,7 @@ rst: $(RST_FILES)
 
 slides: $(SLIDES_FILES)
 
+###############################################################################
 
 %.html: %.ipynb
 	$(JUPYTER) nbconvert --execute $<
@@ -57,11 +61,26 @@ slides: $(SLIDES_FILES)
 %_slides.html: %.ipynb
 	$(JUPYTER) nbconvert --to slides --execute $<
 
+# PUBLISH #####################################################################
 
-publish: html
-	rsync -a -v -e ssh *.ipynb ${PUBLISH_DST}/
-	rsync -a -v -e ssh $(HTML_FILES) ${PUBLISH_DST}/
+publish: jdhp
 
+jdhp: html
+	# JDHP_DL_URI is a shell environment variable that contains the destination
+	# URI of the PDF files.
+	@if test -z $$JDHP_DL_URI ; then exit 1 ; fi
+
+	# JDHP_DOCS_URI is a shell environment variable that contains the
+	# destination URI of the HTML files.
+	@if test -z $$JDHP_DOCS_URI ; then exit 1 ; fi
+
+	# Upload the Notebooks
+	rsync -v -e ssh *.ipynb ${JDHP_DL_URI}/notebook/$(NAME)/
+
+	# Upload the HTML files
+	rsync -v -e ssh $(HTML_FILES) ${JDHP_DOCS_URI}/$(NAME)/
+
+## CLEAN ######################################################################
 
 clean:
 	@echo "Remove output files"

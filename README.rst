@@ -33,7 +33,7 @@ or
 
 ::
 
- $ ipython notebook nom_du_notebook.ipynb
+ $ ipython notebook file_name.ipynb
 
 With Jupyter::
 
@@ -43,7 +43,7 @@ or
 
 ::
 
- $ jupyter notebook nom_du_notebook.ipynb
+ $ jupyter notebook file_name.ipynb
 
 
 License

@@ -22,6 +22,30 @@ named "ipynb"::
  cd python-notebooks
  git submodule add https://github.com/jdhp-docs/notebook-skeleton.git ipynb
 
+Launch notebook
+===============
+
+With Ipython::
+
+ $ ipython notebook
+
+or
+
+::
+
+ $ ipython notebook nom_du_notebook.ipynb
+
+With Jupyter::
+
+ $ jupyter notebook
+
+or
+
+::
+
+ $ jupyter notebook nom_du_notebook.ipynb
+
+
 License
 =======
 

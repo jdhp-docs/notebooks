@@ -1,1 +1,0 @@
-ipynb/strip_ipynb_output.py

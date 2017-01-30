@@ -65,6 +65,11 @@ def main():
                 if "outputs" in cell:
                     cell["outputs"] = []
 
+            # Remove widgets status
+            if 'metadata' in notebook:
+                if 'widgets' in notebook['metadata']:
+                    del notebook['metadata']['widgets']
+
             output_files[file_path] = notebook
 
     # SAVE THE RESULT #########################################################

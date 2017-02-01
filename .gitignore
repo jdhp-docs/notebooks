@@ -13,3 +13,4 @@ __pycache__/
 !README.rst
 !TODO.md
 !strip_ipynb_output.py
+!notebook_snippets_run_test.py

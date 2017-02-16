@@ -6,6 +6,7 @@ Thumbs.db
 *.md
 *.tex
 *.rst
+*.jdhp
 .ipynb_checkpoints/
 __pycache__/
 .DS_Store

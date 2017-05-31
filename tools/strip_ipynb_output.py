@@ -52,25 +52,44 @@ def main():
     output_files = {}
 
     for file_path in file_paths:
+        print("Clean", file_path)
         with open(file_path, 'r') as fd:
             notebook = json.load(fd)
 
-            for cell in notebook['cells']:
+            if notebook['nbformat'] == 4:
+                for cell in notebook['cells']:
 
-                # Init execution_count items
-                if "execution_count" in cell:
-                    cell["execution_count"] = None
+                    # Init execution_count items
+                    if "execution_count" in cell:
+                        cell["execution_count"] = None
 
-                # Remove outputs
-                if "outputs" in cell:
-                    cell["outputs"] = []
+                    # Remove outputs
+                    if "outputs" in cell:
+                        cell["outputs"] = []
 
-            # Remove widgets status
-            if 'metadata' in notebook:
-                if 'widgets' in notebook['metadata']:
-                    del notebook['metadata']['widgets']
+                # Remove widgets status
+                if 'metadata' in notebook:
+                    if 'widgets' in notebook['metadata']:
+                        del notebook['metadata']['widgets']
 
-            output_files[file_path] = notebook
+                output_files[file_path] = notebook
+            elif notebook['nbformat'] == 3:
+                for cell in notebook['worksheets'][0]['cells']:
+
+                    # Init execution_count items
+                    if "execution_count" in cell:
+                        cell["execution_count"] = None
+
+                    # Remove outputs
+                    if "outputs" in cell:
+                        cell["outputs"] = []
+
+                # Remove widgets status
+                if 'metadata' in notebook:
+                    if 'widgets' in notebook['metadata']:
+                        del notebook['metadata']['widgets']
+
+                output_files[file_path] = notebook
 
     # SAVE THE RESULT #########################################################
 

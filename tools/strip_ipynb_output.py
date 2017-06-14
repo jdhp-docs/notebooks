@@ -73,6 +73,7 @@ def main():
                         del notebook['metadata']['widgets']
 
                 output_files[file_path] = notebook
+
             elif notebook['nbformat'] == 3:
                 for cell in notebook['worksheets'][0]['cells']:
 
@@ -91,11 +92,13 @@ def main():
 
                 output_files[file_path] = notebook
 
-    # SAVE THE RESULT #########################################################
+        # SAVE THE RESULT #####################################################
 
-    for file_path, data in output_files.items():
         with open(file_path, 'w') as fd:
-            json.dump(data, fd, sort_keys=True, indent=1)  # pretty print format
+            json.dump(notebook, fd, sort_keys=True, indent=1, ensure_ascii=False)  # pretty print format
+
+            # Jupyter Notebook always add an empty line, thus lets do the same to avoid useless Git diff
+            fd.write("\n")
 
 if __name__ == '__main__':
     main()

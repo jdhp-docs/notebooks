@@ -46,7 +46,7 @@ publish: jdhp
 ###############################################################################
 
 %.html: %.ipynb
-	$(JUPYTER) nbconvert --execute $<
+	$(JUPYTER) nbconvert --to html --template='tools/jdhp_html_fr.tpl' --execute $<
 
 %.pdf: %.ipynb
 	$(JUPYTER) nbconvert --to pdf --execute $<

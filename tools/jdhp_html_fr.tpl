@@ -2,6 +2,18 @@
 {#   jupyter nbconvert --to html --template='tools/jdhp_html_fr.tpl' --execute 'file.ipynb' #}
 {# See http://nbconvert.readthedocs.io/en/latest/customizing.html#Custom-Templates #}
 {# The full.tpl template is there: ~/anaconda/pkgs/nbconvert-5.1.1-py36_0/lib/python3.6/site-packages/nbconvert/templates/html/full.tpl #}
+{#  #}
+{# TODO: #}
+{# - [x] tags "hide", "hide_code", "hide_output" #}
+{# - [ ] bloc "meta" (auteur, date de création, dernière mise à jours, licence) #}
+{# - [ ] balises HTML <head> ... <meta ...> ... </head> #}
+{# - [ ] entête jdhp.org (?) #}
+{# - [x] supprimer les "compteurs" ipython sur la gauche des cellules #}
+{# - [ ] améliorer le CSS #}
+{# - [ ] footer: disqus #}
+{# - [ ] table des matières #}
+{# - [x] note avertissant quand un document est un brouillon #}
+{# - [x] images matplotlib centrées #}
 
 
 {%- extends 'basic.tpl' -%}

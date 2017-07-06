@@ -158,7 +158,7 @@ div.prompt {
 
 {% if 'meta' in cell['metadata'].get('tags', []) %}
 <div id="meta-container">
-  <p>Jérémie Decock (jd.jdhp@gmail.com)</p>
+  <p>Jérémie Decock (<a href="http://www.jdhp.org">www.jdhp.org</a>)</p>
   <!-- <p>Auteur: Jérémie Decock (jd.jdhp@gmail.com)</p> -->
   <!-- <p>Date de création: TODO</p> -->
   <!-- <p>Dernière mise à jours: TODO</p> -->

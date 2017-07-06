@@ -12,6 +12,7 @@
 {# - [ ] améliorer le CSS #}
 {# - [ ] footer: disqus #}
 {# - [ ] table des matières #}
+{# - [ ] SEO: les pages générées sont elles "mobile devices compliant" d'après les critères de Google ? #}
 {# - [x] note avertissant quand un document est un brouillon #}
 {# - [x] images matplotlib centrées #}
 

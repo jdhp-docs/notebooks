@@ -12,6 +12,7 @@
 {# - [ ] améliorer le CSS #}
 {# - [ ] footer: disqus #}
 {# - [ ] table des matières #}
+{# - [ ] check pages with https://validator.w3.org/nu/ and http://jigsaw.w3.org/css-validator/validator #}
 {# - [ ] SEO: les pages générées sont elles "mobile devices compliant" d'après les critères de Google ? #}
 {# - [x] note avertissant quand un document est un brouillon #}
 {# - [x] images matplotlib centrées #}
@@ -26,8 +27,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 {%- block html_head -%}
 <meta charset="utf-8" />
+
+
+<!-- START OF JDHP UPDATES -->
+<!-- <meta http-equiv="content-type" content="text/html; charset=utf-8" /> -->
+<!-- <meta http-equiv="expires" content="0" /> -->
+<!-- <meta http-equiv="pragma" content="no-cache" /> -->
+<!-- <meta http-equiv="cache-control" content="no-cache" /> -->
+<meta name="author" content="Jérémie DECOCK" />
+<meta name="copyright" content="copyright (c) 2006-2017 Jérémie DECOCK" />
+<!-- <meta name="keywords" content="{{resources['metadata']['name']}}" /> -->
+<!-- END OF JDHP UPDATES -->
+
+
 <title>{{resources['metadata']['name']}}</title>
 
 {%- if "widgets" in nb.metadata -%}

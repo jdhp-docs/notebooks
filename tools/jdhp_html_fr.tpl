@@ -117,6 +117,27 @@ div.prompt {
     vertical-align: middle;
 }
 
+p.toc_title {
+    text-align: center;
+    font-weight: bold;
+}
+
+div#toc {
+    margin-left: 20px;
+    border: 1px solid #a2a9b1;
+    background-color: #f8f9fa;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    display: table;
+}
+
+div#toc li {
+    list-style-type: circle;
+    margin-left: 10px;
+}
+
 /* END OF JDHP UPDATES ************** */
 
 @media print {
@@ -186,6 +207,46 @@ div.prompt {
 <p class="admonition-title">Attention:</p>
 <p class="last">Veuillez noter que ce document est en cours de rédaction. Dans son état actuel, il n'est pas destiné à être lu par d'autres personnes que ses auteurs.</p>
 </div>
+{% endif %}
+
+{% if 'toc_fr' in cell['metadata'].get('tags', []) %}
+<div id="toc"></div>
+<script type="text/javascript">
+window.onload = function() {
+    var toc = document.getElementById("toc");
+    toc.innerHTML = "<p class=\"toc_title\">Sommaire:</p>";
+    toc.innerHTML += "<ol>"
+
+    var h2_list = document.getElementsByTagName("h2");
+    for (var i = 0; i < h2_list.length; i++) {
+        var h2 = h2_list[i];
+            var h2_str = h2.textContent.slice(0, -1);  // "slice(0, -1)" remove the last character 
+                toc.innerHTML += "<li><a href=\"#" + h2_str.replace(/\s+/g, '-') + "\">" + h2_str + "</a></li>";
+                }
+
+                toc.innerHTML += "</ol>"
+}
+</script>
+{% endif %}
+
+{% if 'toc_en' in cell['metadata'].get('tags', []) %}
+<div id="toc"></div>
+<script type="text/javascript">
+window.onload = function() {
+    var toc = document.getElementById("toc");
+    toc.innerHTML = "<p class=\"toc_title\">Table of contents:</p>";
+    toc.innerHTML += "<ol>"
+
+    var h2_list = document.getElementsByTagName("h2");
+    for (var i = 0; i < h2_list.length; i++) {
+        var h2 = h2_list[i];
+            var h2_str = h2.textContent.slice(0, -1);  // "slice(0, -1)" remove the last character 
+                toc.innerHTML += "<li><a href=\"#" + h2_str.replace(/\s+/g, '-') + "\">" + h2_str + "</a></li>";
+                }
+
+                toc.innerHTML += "</ol>"
+}
+</script>
 {% endif %}
 
 {% endblock any_cell %}

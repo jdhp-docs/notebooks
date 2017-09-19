@@ -57,40 +57,30 @@ def main():
             notebook = json.load(fd)
 
             if notebook['nbformat'] == 4:
-                for cell in notebook['cells']:
-
-                    # Init execution_count items
-                    if "execution_count" in cell:
-                        cell["execution_count"] = None
-
-                    # Remove outputs
-                    if "outputs" in cell:
-                        cell["outputs"] = []
-
-                # Remove widgets status
-                if 'metadata' in notebook:
-                    if 'widgets' in notebook['metadata']:
-                        del notebook['metadata']['widgets']
-
-                output_files[file_path] = notebook
-
+                cell_list = notebook['cells']
             elif notebook['nbformat'] == 3:
-                for cell in notebook['worksheets'][0]['cells']:
+                cell_list = notebook['worksheets'][0]['cells']
 
-                    # Init execution_count items
-                    if "execution_count" in cell:
-                        cell["execution_count"] = None
+            for cell in cell_list:
+                # Init execution_count items
+                if 'execution_count' in cell:
+                    cell['execution_count'] = None
 
-                    # Remove outputs
-                    if "outputs" in cell:
-                        cell["outputs"] = []
+                # Remove outputs
+                if 'outputs' in cell:
+                    cell['outputs'] = []
 
-                # Remove widgets status
-                if 'metadata' in notebook:
-                    if 'widgets' in notebook['metadata']:
-                        del notebook['metadata']['widgets']
+                # Remove useless metadata
+                if 'metadata' in cell:
+                    if 'collapsed' in cell['metadata']:
+                        del cell['metadata']['collapsed']
 
-                output_files[file_path] = notebook
+            # Remove widgets status
+            if 'metadata' in notebook:
+                if 'widgets' in notebook['metadata']:
+                    del notebook['metadata']['widgets']
+
+            output_files[file_path] = notebook
 
         # SAVE THE RESULT #####################################################
 

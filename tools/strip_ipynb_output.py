@@ -72,8 +72,9 @@ def main():
 
                 # Remove useless metadata
                 if 'metadata' in cell:
-                    if 'collapsed' in cell['metadata']:
-                        del cell['metadata']['collapsed']
+                    for key in ('collapsed', 'scrolled'):
+                        if key in cell['metadata']:
+                            del cell['metadata'][key]
 
             # Remove widgets status
             if 'metadata' in notebook:

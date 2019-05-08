@@ -12,6 +12,7 @@ Thumbs.db
 __pycache__/
 A_RANGER/
 .DS_Store
+sandbox.ipynb
 !README.md
 !README.rst
 !TODO.md

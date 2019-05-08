@@ -98,5 +98,6 @@ clean:
 	@rm -rf __pycache__/
 	@echo "Strip output from Jupyter Notebook files"
 	@strip-nb-out *.ipynb
+	@strip-nb-out */*.ipynb
 
 init: clean

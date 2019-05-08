@@ -2,14 +2,14 @@
 `Python notebooks`_
 ===================
 
-Copyright (c) 2016 Jeremie DECOCK (http://www.jdhp.org)
+Copyright (c) 2016-2019 Jeremie DECOCK (http://www.jdhp.org)
 
-* Source code: https://github.com/jdhp-docs/python-notebooks
+* Source code: https://github.com/jdhp-docs/notebooks
 
 Description
 ===========
 
-This repository contains a Jupyter notebook about Python, Numpy, Matplotlib, Scipy, ...
+This repository contains a collection of Jupyter Notebooks about Programming, Maths, Data science, ...
 
 Dependencies
 ============
@@ -44,17 +44,7 @@ named "ipynb"::
 Launch notebook
 ===============
 
-With Ipython::
-
- $ ipython notebook
-
-or
-
-::
-
- $ ipython notebook file_name.ipynb
-
-With Jupyter::
+With Jupyter Notebook::
 
  $ jupyter notebook
 
@@ -64,13 +54,22 @@ or
 
  $ jupyter notebook file_name.ipynb
 
+With Jupyter Lab::
+
+ $ jupyter lab
+
+or
+
+::
+
+ $ jupyter lab file_name.ipynb
+
 
 License
 =======
 
-`Python notebooks`_ is provided under the terms and conditions of the
+These Jupyter Notebooks are provided under the terms and conditions of the
 `MIT License`_.
-
 
 .. _MIT License: http://opensource.org/licenses/MIT
 .. _Python notebooks: https://github.com/jdhp-docs/python-notebooks

@@ -97,6 +97,6 @@ clean:
 	@rm -f $(HTML_FILES) $(PDF_FILES) $(TEX_FILES) $(MD_FILES) $(PY_FILES) $(RST_FILES) $(SLIDES_FILES) $(JDHP_FILES)
 	@rm -rf __pycache__/
 	@echo "Strip output from Jupyter Notebook files"
-	@./tools/strip_ipynb_output.py *.ipynb
+	@strip-nb-out *.ipynb
 
 init: clean

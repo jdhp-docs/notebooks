@@ -11,6 +11,25 @@ Description
 
 This repository contains a Jupyter notebook about Python, Numpy, Matplotlib, Scipy, ...
 
+Dependencies
+============
+
+- nbutils (https://github.com/jeremiedecock/python-nbutils)
+
+::
+
+ pip install --pre nbutils
+
+Recommanded Jupyter Lab extensions
+==================================
+
+::
+
+ conda install nodejs
+ jupyter labextension install @jupyterlab/toc
+ jupyter labextension install @jupyter-widgets/jupyterlab-manager
+ jupyter labextension install @ijmbarr/jupyterlab_spellchecker
+
 Installation and usage
 ======================
 

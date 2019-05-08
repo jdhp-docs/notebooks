@@ -12,11 +12,15 @@
 * [x] Add a script to remove all results from .ipynb files, use it in the
       Makefile (in the "clean" target) and add instruction to explain how use
       it automatically with Git.
-* [ ] Makefile: add a "publish" target = publish .ipynb (with outputs) and
+* [x] Makefile: add a "publish" target = publish .ipynb (with outputs) and
       .html on JDHP.
 * [ ] Improve the style in the HTML output: make the output more "natural" for
       readers who have never heard about Jupyter and IPython.
-* [ ] Add documentation in the README file.
+* [ ] Add social buttons ("share on Twitter/Facebook/LinkedIn/...") in HTML
+      generated files
+* [ ] Add Disqus in HTML generated files
+* [x] Add documentation in the README file.
+* [ ] Switch to GitLab (?)
 
 ## Step 2: write notebooks
 

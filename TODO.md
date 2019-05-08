@@ -15,10 +15,10 @@
 * [x] Makefile: add a "publish" target = publish .ipynb (with outputs) and
       .html on JDHP.
 * [ ] Improve the style in the HTML output: make the output more "natural" for
-      readers who have never heard about Jupyter and IPython.
+      readers who have never heard about Jupyter and IPython. Get inspiration from blog engines listed there: https://gitlab.com/pages .
 * [ ] Add social buttons ("share on Twitter/Facebook/LinkedIn/...") in HTML
       generated files
-* [ ] Add Disqus in HTML generated files
+* [ ] Add Disqus in HTML generated files or an alternative: https://www.brianshim.com/webtricks/add-a-comment-wall-to-your-website/
 * [x] Add documentation in the README file.
 * [ ] Switch to GitLab (?)
 

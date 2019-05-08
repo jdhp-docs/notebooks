@@ -7,8 +7,10 @@ Thumbs.db
 *.tex
 *.rst
 *.jdhp
+*-Copy*.ipynb
 .ipynb_checkpoints/
 __pycache__/
+A_RANGER/
 .DS_Store
 !README.md
 !README.rst

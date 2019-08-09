@@ -2,6 +2,9 @@
 `Python notebooks`_
 ===================
 
+.. image:: https://mybinder.org/badge_logo.svg
+ :target: https://mybinder.org/v2/gh/jdhp-docs/notebooks/master
+
 Copyright (c) 2016-2019 Jeremie DECOCK (http://www.jdhp.org)
 
 * Source code: https://github.com/jdhp-docs/notebooks

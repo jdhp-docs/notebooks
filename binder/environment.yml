@@ -2,10 +2,12 @@ channels:
     - conda-forge
 dependencies:
     - appmode
-    - ipywidgets
     - matplotlib
     - numpy
     - pandas
     - scipy
     - pip:
         - nnfigs
+        - jupyterlab==3
+        - ipywidgets
+        - ipympl

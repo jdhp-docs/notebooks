@@ -11,3 +11,6 @@ dependencies:
         - jupyterlab==3
         - ipywidgets
         - ipympl
+        - plotly
+        - seaborn
+        - statsmodels

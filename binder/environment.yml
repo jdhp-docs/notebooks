@@ -12,3 +12,4 @@ dependencies:
         - ipywidgets
         - ipympl
         - plotly
+        - statsmodels
